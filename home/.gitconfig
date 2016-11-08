@@ -1,9 +1,9 @@
 [user]
-  name=Eric Carmichael
-  email=eric@ckcollab.com
+  name=Graham Whitley
+  email=gwhitley99@gmail.com
 
 [github]
-  user = ckcollab
+  user = lotusgraham
 
 [alias]
     track = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"

@@ -3,9 +3,14 @@ export EDITOR=subl
 bind "set show-all-if-ambiguous On"
 . ~/my/dotfiles/etc/django_bash_completion.sh
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/src
+
+[[ -s /Users/lotusgraham/.pythonz/etc/bashrc ]] && source /Users/lotusgraham/.pythonz/etc/bashrc
+# export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME=/Users/lotusgraham/.virtualenvs
+# export PROJECT_HOME=$HOME/src
+export PROJECT_HOME=/Users/lotusgraham/Projects
 source /usr/local/bin/virtualenvwrapper.sh
+source ~/git-completion.bash
 
 # Terminal colours (after installing GNU coreutils)
 NM="\[\033[0;38m\]" #means no background and white lines
@@ -65,6 +70,26 @@ alias gs='git status'
 alias matebash='mate ~/.bash_profile'
 alias ducks='du -cks * | sort -rn|head -11'
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
+
+# Git Alias'
+alias gs='git status'
+alias gst='git status -sb'
+alias ga='git add'
+alias gau='git add -u' # Removes deleted files
+alias gp='git pull'
+alias gpu='git push'
+alias gc='git commit -v'
+alias gca='git commit -v -a' # Does both add and commit in same command, add -m$
+alias gco='git checkout'
+alias glogp='git log --pretty=format:"%h %s" --graph'
+alias glog='git log'
+alias gb='git branch'
+alias gd='git diff'
+alias gk='gitk --all&'
+alias gx='gitx --all'
+alias gf='git fetch'
+
+
 # alias start_pg="postgres -D /Volumes/Aerie/Users/skoczen/.db"
 alias start_pg="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias start_memcached="/usr/local/bin/memcached"
